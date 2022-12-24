@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--?xml version="1.0" 
+	encoding="UTF-8" standalone="no"?><additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	%%xsi:noNamespaceSchemaLocation="http://sumo-sim.org/xsd/additional_file.xsd" --><additional>
+
+	<vType accel="4.0" color="230,255,100" decel="9.0" guiShape="rail/railcar" id="tramway" length="20" maxSpeed="30" minGap="10" sigma="0" vClass="tram"/>
+
+<!--Usa questo per comportamento standard-->
+	<vType accel="2.9" decel="7.5" guiShape="passenger" id="car" length="4.5" maxSpeed="13.889" minGap="0.3" sigma="0" vClass="passenger"/>
+<!--Usa questo per azzerare tempo di reazione-->
+<!--	<vType accel="2.9" decel="7.5" guiShape="passenger" id="car" length="4.5" maxSpeed="13.889" minGap="0.3" sigma="0" tau="0.1" vClass="passenger"/>-->
+
+</additional>

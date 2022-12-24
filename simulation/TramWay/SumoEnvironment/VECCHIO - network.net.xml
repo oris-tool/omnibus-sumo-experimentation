@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- generated on 10/06/19 11:25:44 by Eclipse SUMO netedit Version 1.1.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="C:\Users\grazi\git\omnibus\tramwayProject\simulation\TramWay\network.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Users\grazi\git\omnibus\tramwayProject\simulation\TramWay\network.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+</configuration>
+--><net xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" junctionCornerDetail="5" limitTurnSpeed="5.50" version="1.1" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location convBoundary="0.00,-100.00,600.00,100.00" netOffset="0.00,0.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge function="internal" id=":gneJ7_0">
+        <lane id=":gneJ7_0_0" index="0" length="9.03" shape="307.20,1.60 304.75,1.95 303.00,3.00 301.95,4.75 301.60,7.20" speed="30"/>
+    </edge>
+    <edge function="internal" id=":gneJ7_1">
+        <lane id=":gneJ7_1_0" index="0" length="11.20" shape="307.20,1.60 296.00,1.60" speed="30"/>
+    </edge>
+    <edge function="internal" id=":gneJ7_2">
+        <lane id=":gneJ7_2_0" index="0" length="9.03" shape="301.60,-7.20 301.95,-4.75 303.00,-3.00 304.75,-1.95 307.20,-1.60" speed="30"/>
+    </edge>
+    <edge function="internal" id=":gneJ7_3">
+        <lane id=":gneJ7_3_0" index="0" length="14.40" shape="301.60,-7.20 301.60,7.20" speed="30"/>
+    </edge>
+    <edge function="internal" id=":gneJ7_4">
+        <lane id=":gneJ7_4_0" index="0" length="11.73" shape="301.60,-7.20 301.25,-3.35 300.20,-0.60 298.45,1.05 296.00,1.60" speed="30"/>
+    </edge>
+    <edge function="internal" id=":gneJ7_5">
+        <lane id=":gneJ7_5_0" index="0" length="11.20" shape="296.00,-1.60 307.20,-1.60" speed="30"/>
+    </edge>
+    <edge function="internal" id=":gneJ7_6">
+        <lane id=":gneJ7_6_0" index="0" length="4.04" shape="296.00,-1.60 298.45,-1.05 299.56,0.00" speed="30"/>
+    </edge>
+    <edge function="internal" id=":gneJ7_7">
+        <lane id=":gneJ7_7_0" index="0" length="7.68" shape="299.56,0.00 300.20,0.60 301.25,3.35 301.60,7.20" speed="30"/>
+    </edge>
+
+    <edge from="gneJ7" id="gneE34" priority="-1" to="gneJ39">
+        <lane id="gneE34_0" index="0" length="60.00" shape="307.20,-1.60 367.20,-1.60" speed="30"/>
+    </edge>
+    <edge from="gneJ39" id="gneE35" priority="-1" to="gneJ7">
+        <lane id="gneE35_0" index="0" length="60.00" shape="367.20,1.60 307.20,1.60" speed="30"/>
+    </edge>
+    <edge from="gneJ7" id="gneE36" priority="-1" to="gneJ41">
+        <lane id="gneE36_0" index="0" length="60.00" shape="296.00,1.60 236.00,1.60" speed="30"/>
+    </edge>
+    <edge from="gneJ41" id="gneE38" priority="-1" to="gneJ7">
+        <lane id="gneE38_0" index="0" length="60.00" shape="236.00,-1.60 296.00,-1.60" speed="30"/>
+    </edge>
+    <edge from="gneJ7" id="gneE7" priority="-1" to="gneJ10">
+        <lane id="gneE7_0" index="0" length="92.80" shape="301.60,7.20 301.60,100.00" speed="30"/>
+    </edge>
+    <edge from="gneJ12" id="gneE9" priority="-1" to="gneJ7">
+        <lane id="gneE9_0" index="0" length="190.00" shape="301.60,-197.20 301.60,-7.20" speed="30"/>
+    </edge>
+
+    <tlLogic id="gneJ7" offset="0" programID="0" type="static">
+        <phase duration="220" state="rGrrrGr"/>
+		<phase duration="220" state="GrGGGrG"/>
+    </tlLogic>
+
+    <junction id="gneJ10" incLanes="gneE7_0" intLanes="" shape="303.20,100.00 300.00,100.00" type="dead_end" x="300.00" y="100.00"/>
+    <junction id="gneJ12" incLanes="" intLanes="" shape="300.00,-100.00 303.20,-100.00" type="dead_end" x="300.00" y="-100.00"/>
+    <junction id="gneJ39" incLanes="gneE34_0" intLanes="" shape="600.00,0.00 600.00,-3.20 600.00,0.00" type="dead_end" x="600.00" y="0.00"/>
+    <junction id="gneJ41" incLanes="gneE36_0" intLanes="" shape="0.00,0.00 0.00,3.20 0.00,0.00" type="dead_end" x="0.00" y="0.00"/>
+    <junction id="gneJ7" incLanes="gneE35_0 gneE9_0 gneE38_0" intLanes=":gneJ7_0_0 :gneJ7_1_0 :gneJ7_2_0 :gneJ7_3_0 :gneJ7_4_0 :gneJ7_5_0 :gneJ7_7_0" shape="300.00,7.20 303.20,7.20 303.64,4.98 304.20,4.20 304.98,3.64 305.98,3.31 307.20,3.20 307.20,-3.20 304.98,-3.64 304.20,-4.20 303.64,-4.98 303.31,-5.98 303.20,-7.20 300.00,-7.20 299.56,-4.98 299.00,-4.20 298.22,-3.64 297.22,-3.31 296.00,-3.20 296.00,3.20 298.22,3.64 299.00,4.20 299.56,4.98 299.89,5.98" type="traffic_light" x="300.00" y="0.00">
+        <request cont="0" foes="1001000" index="0" response="0001000"/>
+        <request cont="0" foes="1011000" index="1" response="0011000"/>
+        <request cont="0" foes="0100000" index="2" response="0000000"/>
+        <request cont="0" foes="1100011" index="3" response="1000000"/>
+        <request cont="0" foes="1100010" index="4" response="1000000"/>
+        <request cont="0" foes="0011100" index="5" response="0011100"/>
+        <request cont="1" foes="0011011" index="6" response="0011011"/>
+    </junction>
+
+    <junction id=":gneJ7_7_0" incLanes=":gneJ7_6_0 gneE35_0" intLanes=":gneJ7_0_0 :gneJ7_1_0 :gneJ7_3_0 :gneJ7_4_0" type="internal" x="299.56" y="0.00"/>
+
+    <connection dir="r" from="gneE35" fromLane="0" linkIndex="0" state="o" tl="gneJ7" to="gneE7" toLane="0" via=":gneJ7_0_0"/>
+     <!--second tramway track linkindex == 1-->
+    <connection dir="s" from="gneE35" fromLane="0" linkIndex="1" state="o" tl="gneJ7" to="gneE36" toLane="0" via=":gneJ7_1_0"/>
+	 <!--first tramway track linkindex == 5-->
+    <connection dir="s" from="gneE38" fromLane="0" linkIndex="5" state="o" tl="gneJ7" to="gneE34" toLane="0" via=":gneJ7_5_0"/>
+    <connection dir="l" from="gneE38" fromLane="0" linkIndex="6" state="o" tl="gneJ7" to="gneE7" toLane="0" via=":gneJ7_6_0"/>
+    <connection dir="r" from="gneE9" fromLane="0" linkIndex="2" state="O" tl="gneJ7" to="gneE34" toLane="0" via=":gneJ7_2_0"/>
+		 <!--car linkindex == 3-->
+    <connection dir="s" from="gneE9" fromLane="0" linkIndex="3" state="O" tl="gneJ7" to="gneE7" toLane="0" via=":gneJ7_3_0"/>
+    <connection dir="l" from="gneE9" fromLane="0" linkIndex="4" state="O" tl="gneJ7" to="gneE36" toLane="0" via=":gneJ7_4_0"/>
+
+    <connection dir="r" from=":gneJ7_0" fromLane="0" state="M" to="gneE7" toLane="0"/>
+    <connection dir="s" from=":gneJ7_1" fromLane="0" state="M" to="gneE36" toLane="0"/>
+    <connection dir="r" from=":gneJ7_2" fromLane="0" state="M" to="gneE34" toLane="0"/>
+    <connection dir="s" from=":gneJ7_3" fromLane="0" state="M" to="gneE7" toLane="0"/>
+    <connection dir="l" from=":gneJ7_4" fromLane="0" state="M" to="gneE36" toLane="0"/>
+    <connection dir="s" from=":gneJ7_5" fromLane="0" state="M" to="gneE34" toLane="0"/>
+    <connection dir="l" from=":gneJ7_6" fromLane="0" state="m" to="gneE7" toLane="0" via=":gneJ7_7_0"/>
+    <connection dir="l" from=":gneJ7_7" fromLane="0" state="M" to="gneE7" toLane="0"/>
+
+</net>

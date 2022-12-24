@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<additional> <!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo-sim.org/xsd/additional_file.xsd" -->
+
+	<inductionLoop file="loops.out.xml" freq="1"
+		id="sensorTram1Crossroad" lane="tram1InEdge_0" pos="100" />
+
+	<inductionLoop file="loops.out.xml" freq="1"
+		id="sensorTram2Crossroad" lane="tram2InEdge_0" pos="100.0" />
+
+	<inductionLoop file="loops.out.xml" freq="1"
+				   id="sensorCarInStart" lane="carInEdge_0" pos="0.0" />
+
+</additional>

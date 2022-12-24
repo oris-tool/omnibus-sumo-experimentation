@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><net xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" junctionCornerDetail="5" limitTurnSpeed="5.50" version="1.3" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+	<location convBoundary="-100.00,-150,100.00,5.00" netOffset="0.00,0.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+	<edge from="jCarIn" id="carInEdge" priority="-1" spreadType="center" to="jCrossRoad">
+		<lane id="carInEdge_0" index="0" length="150" shape="0.00,-150 0.00,-7.20" speed="13.888"/>
+	</edge>
+	<edge from="jCrossRoad" id="carOutEdge" priority="-1" spreadType="center" to="jCarOut">
+		<lane id="carOutEdge_0" index="0" length="25" shape="0.00,0.00 0.00,50.00" speed="13.888"/>
+	</edge>
+	<edge from="jTram1In" id="tram1InEdge" priority="-1" to="jCrossRoad">
+		<lane id="tram1InEdge_0" index="0" length="100.00" shape="-100.00,-1.60 -5.60,-1.60" speed="30"/>
+	</edge>
+	<edge from="jCrossRoad" id="tram1OutEdge" priority="-1" to="jTram2In">
+		<lane id="tram1OutEdge_0" index="0" length="100.00" shape="5.60,-1.60 100.00,-1.60" speed="30"/>
+	</edge>
+	<edge from="jTram2In" id="tram2InEdge" priority="-1" to="jCrossRoad">
+		<lane id="tram2InEdge_0" index="0" length="100.00" shape="100.00,1.60 5.60,1.60" speed="30"/>
+	</edge>
+	<edge from="jCrossRoad" id="tram2OutEdge" priority="-1" to="jTram1In">
+		<lane id="tram2OutEdge_0" index="0" length="100.00" shape="-5.60,1.60 -100.00,1.60" speed="30"/>
+	</edge>
+
+	<tlLogic id="crossRoadTL" offset="0" programID="0" type="static">
+		<phase duration="10000" state="GrG"/>
+		<phase duration="10000" state="rGr"/>
+	</tlLogic>
+
+	<junction id="jCarIn" incLanes="" intLanes="" shape="-1.60,-150 1.60,-150" type="dead_end" x="0.00" y="-100.00"/>
+	<junction id="jCarOut" incLanes="carOutEdge_0" intLanes="" shape="1.60,5.00 -1.60,5.00" type="dead_end" x="0.00" y="25.00"/>
+	<junction id="jCrossRoad" incLanes="tram2InEdge_0 carInEdge_0 tram1InEdge_0" intLanes="" shape="-1.60,5.00 1.60,5.00 5.60,3.20 5.60,-3.20 3.38,-3.64 2.60,-4.20 2.04,-4.98 1.71,-5.98 1.60,-7.20 -1.60,-7.20 -2.04,-4.98 -2.60,-4.20 -3.38,-3.64 -4.38,-3.31 -5.60,-3.20 -5.60,3.20" type="traffic_light" x="0.00" y="0.00">
+		<request foes="010" index="0" response="000"/>
+		<request foes="101" index="1" response="101"/>
+		<request foes="010" index="2" response="000"/>
+	</junction>
+	<junction id="jTram1In" incLanes="tram2OutEdge_0" intLanes="" shape="-100.00,0.00 -100.00,3.20 -100.00,0.00" type="dead_end" x="-100.00" y="0.00"/>
+	<junction id="jTram2In" incLanes="tram1OutEdge_0" intLanes="" shape="100.00,0.00 100.00,-3.20 100.00,0.00" type="dead_end" x="100.00" y="0.00"/>
+
+	<connection dir="s" from="carInEdge" fromLane="0" linkIndex="1" state="o" tl="crossRoadTL" to="carOutEdge" toLane="0"/>
+	<connection dir="s" from="tram1InEdge" fromLane="0" linkIndex="2" state="O" tl="crossRoadTL" to="tram1OutEdge" toLane="0"/>
+	<connection dir="s" from="tram2InEdge" fromLane="0" linkIndex="0" state="O" tl="crossRoadTL" to="tram2OutEdge" toLane="0"/>
+
+</net>

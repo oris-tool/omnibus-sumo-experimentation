@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<routes>
+<route id="carRoute" edges="carInEdge carOutEdge" />
+<route id="tram1Route" edges="tram1InEdge tram1OutEdge" />
+<route id="tram2Route" edges="tram2InEdge tram2OutEdge" />
+</routes>
