@@ -56,9 +56,9 @@ public class Table3PatternComparator {
         );
 
         ScenarioDefiner.arrivalRates = Arrays.asList(
+                BigDecimal.valueOf(0.05),
                 BigDecimal.valueOf(0.1),
-                BigDecimal.valueOf(0.2),
-                BigDecimal.valueOf(0.3)
+                BigDecimal.valueOf(0.15)
         );
 
         ScenarioDefiner.maxVehicleSpeedsKmh = Arrays.asList(
@@ -232,10 +232,10 @@ public class Table3PatternComparator {
 
     /**
      * Questa funzione converte una stringa {@param pattern} in un array di booleani {@return redTrafficLightPattern}
-     * dove per ogni step di simulazione su SUMO (il totale è {@param simulationSteps}) il corrispondente booleano è
-     * a true se il semaforo è previsto essere rosso per la coda con indice {@param carFlow}.
+     * dove per ogni step di simulazione su SUMO (il totale � {@param simulationSteps}) il corrispondente booleano �
+     * a true se il semaforo � previsto essere rosso per la coda con indice {@param carFlow}.
      * <p>
-     * Nella stringa {@param pattern} ogni carattere corrisponde a un secondo di simulazione, poiché la risoluzione
+     * Nella stringa {@param pattern} ogni carattere corrisponde a un secondo di simulazione, poich� la risoluzione
      * temporale (sumo_time_step) della simulazione di SUMO potrebbe essere diversa (spesso 0.1 secondi), la funzione fa
      * anche questa conversione.
      */

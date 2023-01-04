@@ -5,7 +5,7 @@ import de.tudresden.sumo.cmd.*;
 import de.tudresden.ws.container.SumoStringList;
 import de.tudresden.ws.container.SumoVehicleData;
 import it.polito.appeal.traci.SumoTraciConnection;
-import org.oristool.sumo.Table3PatternComparator;
+import org.oristool.sumo.Table4PatternComparator;
 import org.oristool.sumo.samplegenerators.ShiftedExpSampleGenerator;
 import org.oristool.sumo.samplegenerators.UniformSampleGenerator;
 import org.oristool.sumo.utils.ScenarioDefiner;
@@ -43,7 +43,7 @@ public class Table3PCSumoAnalyzer {
         this.onQueueCars = new double[SIMULATION_STEPS];
         String[] onQueueCars4Run = new String[SIMULATION_STEPS];
 
-        for (int r = 0; r < Table3PatternComparator.sumo_runs; r++) {
+        for (int r = 0; r < Table4PatternComparator.sumo_runs; r++) {
 
             redTrafficLightPattern = Arrays.copyOf(redTrafficLightPatternCopy, redTrafficLightPatternCopy.length);
 
@@ -63,10 +63,10 @@ public class Table3PCSumoAnalyzer {
                     BigDecimal.ONE.divide(
                             BigDecimal.ONE.divide(
                                             ScenarioDefiner.arrivalRates.get(flowIndex), RoundingMode.HALF_UP)
-                                    .subtract(Table3PatternComparator.sumo_shift),
+                                    .subtract(Table4PatternComparator.sumo_shift),
                             5, RoundingMode.HALF_UP);
             ShiftedExpSampleGenerator shiftedExponentialSampler =
-                    new ShiftedExpSampleGenerator(newRate, Table3PatternComparator.sumo_shift);
+                    new ShiftedExpSampleGenerator(newRate, Table4PatternComparator.sumo_shift);
             while (lastCarTime <= timeBound.doubleValue()) {
                 double sample = shiftedExponentialSampler.getSample().doubleValue();
                 lastCarTime += sample;
@@ -74,9 +74,9 @@ public class Table3PCSumoAnalyzer {
             }
 
             // Start simulation
-            SumoTraciConnection conn = new SumoTraciConnection(Table3PatternComparator.WIN_SUMO_BIN,
-                    Table3PatternComparator.CONFIG_FILE);
-            conn.addOption("step-length", Table3PatternComparator.sumo_time_step.toString());
+            SumoTraciConnection conn = new SumoTraciConnection(Table4PatternComparator.WIN_SUMO_BIN,
+                    Table4PatternComparator.CONFIG_FILE);
+            conn.addOption("step-length", Table4PatternComparator.sumo_time_step.toString());
             conn.addOption("start", "1"); // Start Sumo immediately.
             try {
                 conn.runServer();
@@ -261,7 +261,7 @@ public class Table3PCSumoAnalyzer {
                     e.printStackTrace();
                 }
                 if ("rGr".equals(tlPhase)) {
-                    this.availability[ts] += (1. / (double) Table3PatternComparator.sumo_runs);
+                    this.availability[ts] += (1. / (double) Table4PatternComparator.sumo_runs);
                 }
 
                 /*
@@ -282,7 +282,7 @@ public class Table3PCSumoAnalyzer {
 //                }
 
                 onQueueCars4Run[ts] = Double.toString(carCounters.doubleValue());
-                this.onQueueCars[ts] += carCounters.doubleValue() / (double) Table3PatternComparator.sumo_runs;
+                this.onQueueCars[ts] += carCounters.doubleValue() / (double) Table4PatternComparator.sumo_runs;
 
             }
             conn.close();
@@ -290,7 +290,7 @@ public class Table3PCSumoAnalyzer {
             queueFileWriter.writeNext(onQueueCars4Run);
 
             try {
-                Runtime.getRuntime().exec("taskkill /F /IM " + Table3PatternComparator.SUMO_EXE);
+                Runtime.getRuntime().exec("taskkill /F /IM " + Table4PatternComparator.SUMO_EXE);
             } catch (IOException e) {
                 e.printStackTrace();
             }

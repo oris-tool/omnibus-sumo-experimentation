@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-public class Table2PatternComparator {
+public class Table5PatternComparator {
 
     public static String SUMO_EXE = "sumo.exe"; // -gui for interface
     public static String WIN_SUMO_BIN = System.getenv("SUMO_HOME") + "\\bin\\" + SUMO_EXE;
@@ -62,9 +62,9 @@ public class Table2PatternComparator {
         );
 
         ScenarioDefiner.maxVehicleSpeedsKmh = Arrays.asList(
-                new BigDecimal("50"),
-                new BigDecimal("50"),
-                new BigDecimal("50")
+                new BigDecimal("30"),
+                new BigDecimal("30"),
+                new BigDecimal("30")
         );
 
         ScenarioDefiner.updateFields();
@@ -156,7 +156,7 @@ public class Table2PatternComparator {
         if (!resultsFolder.exists())
             resultsFolder.mkdir();
 
-        String executionFolderName = "table2_sumo";
+        String executionFolderName = "table5_sumo";
         File executionFolder = new File("results/" + executionFolderName);
         executionFolder.mkdir();
 
@@ -232,10 +232,10 @@ public class Table2PatternComparator {
 
     /**
      * Questa funzione converte una stringa {@param pattern} in un array di booleani {@return redTrafficLightPattern}
-     * dove per ogni step di simulazione su SUMO (il totale è {@param simulationSteps}) il corrispondente booleano è
-     * a true se il semaforo è previsto essere rosso per la coda con indice {@param carFlow}.
+     * dove per ogni step di simulazione su SUMO (il totale Ã¨ {@param simulationSteps}) il corrispondente booleano Ã¨
+     * a true se il semaforo Ã¨ previsto essere rosso per la coda con indice {@param carFlow}.
      * <p>
-     * Nella stringa {@param pattern} ogni carattere corrisponde a un secondo di simulazione, poiché la risoluzione
+     * Nella stringa {@param pattern} ogni carattere corrisponde a un secondo di simulazione, poichÃ© la risoluzione
      * temporale (sumo_time_step) della simulazione di SUMO potrebbe essere diversa (spesso 0.1 secondi), la funzione fa
      * anche questa conversione.
      */

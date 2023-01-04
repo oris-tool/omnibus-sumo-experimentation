@@ -1,6 +1,6 @@
 package org.oristool.sumo.utils.pc;
 
-import org.oristool.sumo.Table2PatternComparator;
+import org.oristool.sumo.Table3PatternComparator;
 import org.oristool.sumo.sumo.ChangeXmlConfiguration;
 import org.oristool.sumo.utils.ScenarioDefiner;
 import org.xml.sax.SAXException;
@@ -12,21 +12,21 @@ import java.io.IOException;
 
 public class Table2PCSumoConfigurator {
 
-    private static String netConfigFilePath = Table2PatternComparator.netConfigFilePath;
+    private static String netConfigFilePath = Table3PatternComparator.netConfigFilePath;
 
-    private static String vehConfigFilePath = Table2PatternComparator.vehConfigFilePath;
+    private static String vehConfigFilePath = Table3PatternComparator.vehConfigFilePath;
 
     public static void configureNetwork(int flowIndex) throws ParserConfigurationException, SAXException, IOException,
             XPathExpressionException, TransformerException {
 
         ChangeXmlConfiguration.changeXmlConfiguration(netConfigFilePath, "/net/edge[@id='tram1InEdge']/lane", "speed",
-                Table2PatternComparator.maxTramSpeed.toPlainString());
+                Table3PatternComparator.maxTramSpeed.toPlainString());
         ChangeXmlConfiguration.changeXmlConfiguration(netConfigFilePath, "/net/edge[@id='tram2InEdge']/lane", "speed",
-                Table2PatternComparator.maxTramSpeed.toPlainString());
+                Table3PatternComparator.maxTramSpeed.toPlainString());
         ChangeXmlConfiguration.changeXmlConfiguration(netConfigFilePath, "/net/edge[@id='tram1OutEdge']/lane", "speed",
-                Table2PatternComparator.maxTramSpeed.toPlainString());
+                Table3PatternComparator.maxTramSpeed.toPlainString());
         ChangeXmlConfiguration.changeXmlConfiguration(netConfigFilePath, "/net/edge[@id='tram2OutEdge']/lane", "speed",
-                Table2PatternComparator.maxTramSpeed.toPlainString());
+                Table3PatternComparator.maxTramSpeed.toPlainString());
 
         ChangeXmlConfiguration.changeXmlConfiguration(netConfigFilePath, "/net/edge[@id='carInEdge']/lane", "speed",
                 ScenarioDefiner.maxVehicleSpeeds.get(flowIndex).toPlainString());
@@ -40,17 +40,17 @@ public class Table2PCSumoConfigurator {
 
         // configure trams
         ChangeXmlConfiguration.changeXmlConfiguration(vehConfigFilePath, "additional/vType[@id='tramway']", "length",
-                Table2PatternComparator.tramLength.toString());
+                Table3PatternComparator.tramLength.toString());
         ChangeXmlConfiguration.changeXmlConfiguration(vehConfigFilePath, "additional/vType[@id='tramway']", "minGap",
-                Table2PatternComparator.minTramGap.toString());
+                Table3PatternComparator.minTramGap.toString());
         ChangeXmlConfiguration.changeXmlConfiguration(vehConfigFilePath, "additional/vType[@id='tramway']", "maxSpeed",
-                Table2PatternComparator.maxTramSpeed.toString());
+                Table3PatternComparator.maxTramSpeed.toString());
 
         // configure cars
         ChangeXmlConfiguration.changeXmlConfiguration(vehConfigFilePath, "additional/vType[@id='car']", "length",
-                Table2PatternComparator.vehicleLength.toString());
+                Table3PatternComparator.vehicleLength.toString());
         ChangeXmlConfiguration.changeXmlConfiguration(vehConfigFilePath, "additional/vType[@id='car']", "minGap",
-                Table2PatternComparator.minVehicleGap.toString());
+                Table3PatternComparator.minVehicleGap.toString());
         ChangeXmlConfiguration.changeXmlConfiguration(vehConfigFilePath, "additional/vType[@id='car']", "maxSpeed",
                 ScenarioDefiner.maxVehicleSpeeds.get(flowIndex).toString());
     }
