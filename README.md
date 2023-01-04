@@ -23,7 +23,7 @@ Specifically, navigate to `test/java/org/oristool/sumo` and execute the main met
 <p align="center">
   <img src="imgs/threeFlows.png?raw=true" style="width:65%">
   <p align="center">
-  <em>Fig. 1 A graphical representation of an intersection among three vehicle flows and a bidirectional tram line. </em>
+  <em>A graphical representation of an intersection among three vehicle flows and a bidirectional tram line. </em>
     </p>
 </p>
 
