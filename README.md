@@ -2,7 +2,7 @@
 
 This repository provides the experimental setup to use the [SUMO traffic simulator](https://sumo.dlr.de/) to evaluate the expected number of queued vehicles at specific urban intersections with tram lines having right of way.
 
-The results of the evaluation of the scenarios considered in this repository can be used to validate accuracy and complexity of the approach implemented by the [Omnibus Library](https://github.com/oris-tool/omnibus/) to derive optimal semaphore schedules for multimodal intersections. These experiments are reported in the paper titled "Efficient derivation of optimal signal schedules for multimodal intersections", authored by Nicola Bertocci, Laura Carnevali, Leonardo Scommegna, and Enrico Vicario, currently submitted to Simulation Modelling Practice and Theory.
+The results of the evaluation of the scenarios considered in this repository can be used to validate accuracy and complexity of the approach implemented by the [Omnibus Library](https://github.com/oris-tool/omnibus/) to derive optimal semaphore schedules for multimodal intersections. These experiments are reported in the paper titled "Efficient derivation of optimal signal schedules for multimodal intersections", authored by Nicola Bertocci, Laura Carnevali, Leonardo Scommegna, and Enrico Vicario, accepted for publication in Simulation Modelling Practice and Theory.
 
 ## Experimental reproducibility
 
